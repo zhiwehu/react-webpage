@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import {
   useColorModeValue,
   VStack,
-  HStack,
   Heading,
   Input,
   Button,
-  Checkbox,
   Image,
 } from "@chakra-ui/react";
 import logo from "../logo.svg";
