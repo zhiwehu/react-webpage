@@ -23,7 +23,7 @@ const Header = () => {
   const { toggleColorMode } = useColorMode();
   return (
     <Flex
-      as="head"
+      as="header"
       bg={bg}
       w="full"
       alignItems="center"

@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 
 import { MdOutlineCenterFocusStrong } from "react-icons/md";
+import Wave from "../components/Wave";
 
 const Home = () => {
   return (
@@ -28,7 +29,7 @@ const Home = () => {
         alignItems="center"
         direction={{ base: "column", lg: "row" }}
       >
-        <VStack>
+        <VStack zIndex={1}>
           <Heading>We build Apps</Heading>
           <Text w="md">
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
@@ -42,6 +43,7 @@ const Home = () => {
         </VStack>
         <Flex border="solid 1px transparent">
           <Image
+            zIndex={1}
             h={[56, 72, 96, "full"]}
             w="full"
             fit="cover"
@@ -49,6 +51,9 @@ const Home = () => {
             alt=""
             loading="lazy"
           />
+          <Box position="absolute" left={0} zIndex={0}>
+            <Wave />
+          </Box>
         </Flex>
       </Stack>
 

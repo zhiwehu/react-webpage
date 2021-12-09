@@ -9,15 +9,24 @@ import {
   Checkbox,
   Image,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { pageAnimation, fade } from "../animate";
+
 import logo from "../logo.svg";
 const Login = () => {
   const bg = useColorModeValue("white", "gray.800");
+  const MotionVStack = motion(VStack);
+  const MotionButton = motion(Button);
   return (
-    <VStack
-      bg={bg}
-      spacing={4}
+    <MotionVStack
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
       w="md"
       maxW="md"
+      bg={bg}
+      spacing={4}
       borderRadius="lg"
       boxShadow="lg"
       borderWidth={1}
@@ -35,12 +44,12 @@ const Login = () => {
         <Link to="/account/forgetpassword">Forget Password?</Link>
       </HStack>
       <Link style={{ display: "block", width: "100%" }} to="/">
-        <Button size="lg" colorScheme="blue" w="full">
+        <MotionButton variants={fade} size="lg" colorScheme="blue" w="full">
           Login
-        </Button>
+        </MotionButton>
       </Link>
       <Link to="/account/signup">No account? Signup</Link>
-    </VStack>
+    </MotionVStack>
   );
 };
 

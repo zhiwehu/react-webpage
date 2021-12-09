@@ -9,15 +9,22 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animate";
 import logo from "../logo.svg";
 const Signup = () => {
   const bg = useColorModeValue("white", "gray.800");
+  const MotionVStack = motion(VStack);
   return (
-    <VStack
-      bg={bg}
-      spacing={4}
+    <MotionVStack
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
       w="md"
       maxW="md"
+      bg={bg}
+      spacing={4}
       borderRadius="lg"
       boxShadow="lg"
       borderWidth={1}
@@ -42,7 +49,7 @@ const Signup = () => {
         </Button>
       </Link>
       <Link to="/account/login">Already has an account</Link>
-    </VStack>
+    </MotionVStack>
   );
 };
 
